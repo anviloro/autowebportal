@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AutoWeb Portal</title>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+	<script src="/javascripts/controller.js"></script>
+</head>
+<body ng-app="mainApplication">
+<h1>AUTOWEB PORTAL</h1>
+<h2>Redis and NodeJs prototype</h2>
+<div id="content"  ng-controller="MainController">
+	<p>
+	  <label  for="amount">Estimate Totaql Cost:</label>
+	  <input ng-model="maxPrice" type="text" id="amount">
+	</p>
+	 
+	<p>
+	<select ng-model="selectedMake" ng-options="item.make as item.make for item in makes">
+	    <option value="">Select Make</option>
+	</select>
+	</p>
+	<p>
+	<select ng-model="selectedModel" ng-options="item.model as item.model for item in models">
+	    <option value="">Select Model</option>
+	</select>
+	</p>
+		<button ng-click="gofind()">Find with AutoWeb</button>
+
+	<div>
+		{{results}}
+	</div>
+</div>
+</body>
+</html>
